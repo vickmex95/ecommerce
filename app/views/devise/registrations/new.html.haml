@@ -1,0 +1,105 @@
+.container
+  .row.my-5
+    .offset-md-1.col-md-10
+      .card.text-white.p-5.bg-primary
+        .card-body
+          %h2 Sign up
+          = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+            = render "devise/shared/error_messages", resource: resource
+            .form-group.my-3
+              .row
+                .col-md-3
+                  .form-group
+                    = f.label :email
+                .col-md-9
+                  .form-group
+                    = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control"
+              .row
+                .col-md-3
+                  .form-group
+                    = f.label :password
+                    - if @minimum_password_length
+                      %em
+                        (#{@minimum_password_length} characters minimum)
+                .col-md-9
+                  .form-group
+                    = f.password_field :password, autocomplete: "new-password", class: "form-control"
+              .row
+                .col-md-3
+                  .form-group
+                    = f.label :password_confirmation
+                .col-md-9
+                  .form-group
+                    = f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control"
+              .row
+                .col-md-3
+                  = f.submit "Sign up"
+              = render "devise/shared/links"
+              .row
+                .col-md-3
+                  .form-group
+                    %label Avatar
+                .col-md-9
+                  .form-group
+                    %input.form-control{:type => "file"}/
+              .row
+                .col-md-3
+                  .form-group
+                    %label Nombre
+                .col-md-9
+                  .form-group
+                    %input.form-control{:placeholder => "Nombre", :type => "text"}/
+              .row
+                .col-md-3
+                  .form-group
+                    %label Apellidos
+                .col-md-9
+                  .form-group
+                    %input.form-control{:placeholder => "Apellidos", :type => "text"}/
+              .row
+                .col-md-3
+                  .form-group
+                    %label Edad
+                .col-md-9
+                  .form-group
+                    %input.form-control{:placeholder => "Edad", :type => "number"}/
+              .row
+                .col-md-3
+                  .form-group
+                    %label Genero
+                .col-md-9
+                  .form-group
+                    %input.form-control{:placeholder => "Genero", :type => "text"}/
+              .row
+                .col-md-3
+                  .form-group
+                    %label Colonia
+                .col-md-9
+                  .form-group
+                    %input.form-control{:placeholder => "Colonia", :type => "text"}/
+              .row
+                .col-md-3
+                  .form-group
+                    %label Calle
+                .col-md-9
+                  .form-group
+                    %input.form-control{:placeholder => "Calle", :type => "text"}/
+              .row
+                .col-md-3
+                  .form-group
+                    %label Ciudad
+                .col-md-9
+                  .form-group
+                    %input.form-control{:placeholder => "Ciudad", :type => "text"}/
+              .row
+                .col-md-3
+                  .form-group
+                    %label Estado
+                .col-md-9
+                  .form-group
+                    %input.form-control{:placeholder => "Estado", :type => "text"}/
+              .row
+                .offset-md-3.col-md-4
+                  %a.btn.btn-secondary.btn-block{:href => "summary.html"} Registrarse
+                .col-md-4
+                  %a.btn.btn-secondary.btn-block{:href => "iniciarsesion.html"} Iniciar sesión
