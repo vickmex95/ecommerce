@@ -38,6 +38,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.attachment :img
       t.string :state
       t.string :city
+      t.string :street
       t.string :uuid
       t.string :provider
       t.integer :permission_level

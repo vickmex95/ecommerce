@@ -1,0 +1,19 @@
+
+.col-md-3
+  .card
+    .card-body
+      %ul.nav.nav-pills.flex-column.my-2
+        %li.nav-item
+          = link_to "Summary", home_summary_path, class:"nav-link"
+        %li.nav-item
+          = link_to "Administrator", home_administrator_path, class:"nav-link"
+        %li.nav-item
+          = link_to "Ratings", home_ratings_path, class:"nav-link"
+        %li.nav-item
+          = link_to "Purchases", home_purchases_path, class:"nav-link"
+        %li.nav-item
+          = link_to "Products", home_products_path, class:"nav-link"
+        %li.nav-item
+          = link_to "Sales", home_sales_path, class:"nav-link"
+        %li.nav-item
+          = link_to "Configuration", edit_user_registration_path, class:"nav-link"

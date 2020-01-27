@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_26_001014) do
+ActiveRecord::Schema.define(version: 2020_01_27_182443) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "c_img_file_name"
+    t.string "c_img_content_type"
+    t.bigint "c_img_file_size"
+    t.datetime "c_img_updated_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,13 +34,14 @@ ActiveRecord::Schema.define(version: 2020_01_26_001014) do
     t.integer "age"
     t.string "img_file_name"
     t.string "img_content_type"
-    t.bigint "img_file_size"
+    t.integer "img_file_size"
     t.datetime "img_updated_at"
     t.string "state"
     t.string "city"
+    t.string "street"
     t.string "uuid"
     t.string "provider"
-    t.integer "permission_level"
+    t.integer "permission_level", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true

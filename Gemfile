@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.0'
 
+#para la autorización de usuarios
+gem 'cancancan'
 #para la creación de usuarios
 gem 'devise'
 #para los iconos
