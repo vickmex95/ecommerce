@@ -5,7 +5,7 @@ class Ability
     user ||= User.new
     if user.is_admin?
       can :manage, Category #CRUD
-    else
+    elsif user.is_normal_user?
       can :read, Category
     end
   end

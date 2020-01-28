@@ -7,6 +7,6 @@ class Category < ApplicationRecord
             }, 
             default_url: "/images/:style/missing.png"
             validates_attachment_content_type :c_img, content_type: /\Aimage\/.*\z/
-            validates :name, presence: true, length: {minimum: 10, too_short: "Minimo son %{count} caracteres." }
-            validates :description, presence: true, length: {minimum: 50, too_short: "Minimo son %{count} caracteres." }
+            validates :name, presence: true, length: {minimum: 3, too_short: "Enter minimum are %{count} characters." }
+            validates :description, presence: true, length: {minimum: 10, too_short: "Enter minimum are %{count} caracteres." }
 end

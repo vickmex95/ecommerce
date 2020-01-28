@@ -16,7 +16,8 @@
         %li.nav-item.dropdown
           %a#navbarDropdownMenuLink.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "http://example.com"} Categories
           .dropdown-menu{"aria-labelledby" => "navbarDropdownMenuLink"}
-            %a.dropdown-item{:href => "#"} Action
+            - @categories.each do |category|
+              =link_to category.name, category, class:"dropdown-item"
       %form.form-inline.m-0
         %input.form-control.mr-2.my-1{:placeholder => "¿What are you looking for?", :type => "text"}/
         %button.btn.btn-primary.my-1{:type => "submit"} Search
