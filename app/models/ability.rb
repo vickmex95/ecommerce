@@ -3,10 +3,11 @@ class Ability
 
   def initialize(user)
     user ||= User.new
+    alias_action :read, to: :normal_user
     if user.is_admin?
-      can :manage, Category #CRUD
+      can :manage, [Category, Product] #CRUD
     elsif user.is_normal_user?
-      can :read, Category
+      can :normal_user, [Category, Product]
     end
   end
 end

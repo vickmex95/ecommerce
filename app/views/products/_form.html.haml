@@ -1,0 +1,30 @@
+.container
+  .row
+    .offset-md-1.col-md-10
+      .card
+        .card-body
+          %h1.my-5= title ||= "Titulo"
+          = form_for @product, builder: BootstrapFormBuilder do |f|
+            .row
+              = f.errors
+              = f.label :name
+              = f.text_field :p_name, placeholder: "Name"
+              = f.label :description
+              = f.text_field :p_description, placeholder: "Description"
+              = f.label :price
+              = f.text_field :p_price, placeholder: "Price"
+              = f.label :quantity
+              = f.number_field :p_quantity, placeholder: "Quantity"
+              = f.label :shipping
+              = f.text_field :p_shipping, placeholder: "Shipping"
+              = f.label :available
+              = f.check_box :p_available
+              - Category.all.each do |category|
+                .col-md-4.my-5
+                  = check_box_tag "categories[]", category.id
+                  = category.name
+            .row
+              .offset-md-2
+              = f.submit 'Save'
+              .col-md-4
+                = link_to "Back", home_administrator_path, class: "btn btn-secondary btn-block"

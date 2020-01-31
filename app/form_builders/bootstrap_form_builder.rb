@@ -20,7 +20,7 @@ class BootstrapFormBuilder < ActionView::Helpers::FormBuilder
     end    
   end
 
-  [:check_box, :email_field, :password_field, :text_field, :number_field, :file_field].each do |metodo|
+  [:text_area, :check_box, :email_field, :password_field, :text_field, :number_field, :file_field].each do |metodo|
     define_method metodo do |name, *args|
       options = args.extract_options!
       extClass = " form-control"
