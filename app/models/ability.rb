@@ -5,7 +5,7 @@ class Ability
     user ||= User.new
     alias_action :read, to: :normal_user
     if user.is_admin?
-      can :manage, [Category, Product] #CRUD
+      can :manage, [Category, Product, Myimage] #CRUD
     elsif user.is_normal_user?
       can :normal_user, [Category, Product]
     end

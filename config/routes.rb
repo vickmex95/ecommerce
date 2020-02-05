@@ -85,6 +85,7 @@ Rails.application.routes.draw do
   get 'home/summary'
   get 'home/categories'
   get 'categories/index'
+  get 'home/search'
   root 'home#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

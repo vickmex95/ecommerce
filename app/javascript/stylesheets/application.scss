@@ -1,5 +1,57 @@
-@import "~bootstrap/scss/bootstrap";
 @import '@fortawesome/fontawesome-free';
-body{
-    background: #E6E6E6;
+@import url('https://fonts.googleapis.com/css?family=Bitter|Spicy+Rice');
+@import '~bootstrap/scss/_functions.scss';
+@import '~bootstrap/scss/_variables.scss';
+
+$theme-colors: (
+    primary: #280e88,
+    secondary: #75b0e8,
+    info: #43ebe3
+);
+
+@import "~bootstrap/scss/bootstrap";
+
+
+*{
+    color:#000;
 }
+h1,h2,h3,h4,h5{
+    color:#3f51b5;
+}
+body{
+	background-color: rgba(161, 167, 255, 0.973);
+}
+
+nav{
+    background-color: #880e1e;
+    a{
+        color:#FFF;
+    }
+    a:hover{
+        color: #525252;
+    }
+}
+
+h1,h2,h3,h4,h5{
+    font-family: 'Spicy Rice', cursive;
+}
+p{
+    text-align: justify;
+    font-family: 'Bitter', serif
+}
+
+.carousel-caption{
+    padding:20px;
+    position:relative;
+    right:0px;
+    left:0px;
+    width:100%;
+    margin-top:20px;
+    background-color:    hsla(236, 84%, 76%, 0.678);
+    color:#fff;
+}
+
+.caption-text{
+	opacity: 1 !important;
+	color: #000;
+}	

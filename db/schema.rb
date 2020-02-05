@@ -33,11 +33,16 @@ ActiveRecord::Schema.define(version: 2020_01_31_193001) do
   end
 
   create_table "myimages", force: :cascade do |t|
-    t.string "img"
+    t.string "img_file_name"
+    t.string "img_content_type"
+    t.bigint "img_file_size"
+    t.datetime "img_updated_at"
     t.string "title"
     t.text "description"
+    t.integer "product_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["product_id"], name: "index_myimages_on_product_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -80,5 +85,6 @@ ActiveRecord::Schema.define(version: 2020_01_31_193001) do
 
   add_foreign_key "has_categories", "categories"
   add_foreign_key "has_categories", "products"
+  add_foreign_key "myimages", "products"
   add_foreign_key "products", "users"
 end
